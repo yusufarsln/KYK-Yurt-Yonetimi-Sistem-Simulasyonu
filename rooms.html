@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KYK Yönetim | Oda Durumları</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-icon">🏫</div>
+            <div>
+                <span>KYK YÖNETİM</span>
+                <small>Yurt Yönetim Paneli</small>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">📋</span> Başvurular
+            </a>
+            <a href="students.html" class="nav-item">
+                <span class="nav-icon">👥</span> Öğrenciler
+            </a>
+            <a href="leaves.html" class="nav-item">
+                <span class="nav-icon">🗓</span> İzin Talepleri
+            </a>
+            <a href="payments.html" class="nav-item">
+                <span class="nav-icon">💳</span> Ödemeler
+            </a>
+            <a href="rooms.html" class="nav-item active">
+                <span class="nav-icon">🚪</span> Oda Durumları
+            </a>
+        </nav>
+    </div>
+
+    <div id="main">
+        <div class="page-header">
+            <div>
+                <div class="page-title">Oda Durumları</div>
+            </div>
+            <div class="live-badge">
+                <span class="live-dot"></span>
+                <span id="date">—</span>
+            </div>
+        </div>
+
+        <div id="ozet" class="summary-grid"></div>
+
+        <div style="display:flex; justify-content:flex-end; align-items:center; margin-bottom:16px;">
+            <select id="siralama" onchange="renderRooms()" class="filter-select">
+                <option value="">Varsayılan Sıralama</option>
+                <option value="dolu-azalan">Doluluk (Çok → Az)</option>
+                <option value="dolu-artan">Doluluk (Az → Çok)</option>
+            </select>
+        </div>
+
+        <div id="bloklar"></div>
+    </div>
+
+    <script src="utils.js"></script>
+    <script src="rooms.js"></script>
+</body>
+
+</html>

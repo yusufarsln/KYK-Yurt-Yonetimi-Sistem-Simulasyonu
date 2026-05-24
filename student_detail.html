@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KYK Yönetim | Öğrenci Detayı</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-icon">🏫</div>
+            <div>
+                <span>KYK YÖNETİM</span>
+                <small>Yurt Yönetim Paneli</small>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">📋</span> Başvurular
+            </a>
+            <a href="students.html" class="nav-item active">
+                <span class="nav-icon">👥</span> Öğrenciler
+            </a>
+            <a href="leaves.html" class="nav-item">
+                <span class="nav-icon">🗓</span> İzin Talepleri
+            </a>
+            <a href="payments.html" class="nav-item">
+                <span class="nav-icon">💳</span> Ödemeler
+            </a>
+            <a href="rooms.html" class="nav-item">
+                <span class="nav-icon">🚪</span> Oda Durumları
+            </a>
+        </nav>
+    </div>
+
+    <div id="main">
+        <div class="page-header" style="justify-content: flex-start; gap: 20px;">
+            <button class="btn" onclick="window.location.href='students.html'" style="padding: 10px 14px;">
+                ← Geri Dön
+            </button>
+            <div>
+                <div class="page-title">Öğrenci Profili</div>
+            </div>
+        </div>
+
+        <div class="detail-wrapper">
+
+            <div class="profile-card">
+                <div class="profile-cover"></div>
+                <div class="profile-avatar" id="detay-avatar">?</div>
+                <div class="profile-info">
+                    <div id="detay-isim" class="profile-name">Yükleniyor...</div>
+                    <div style="color: var(--text-muted); font-size: 13px;">Aktif Öğrenci</div>
+
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">TC Kimlik Numarası</span>
+                            <span id="detay-tc" class="info-value td-mono"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Doğum Tarihi</span>
+                            <span id="detay-dogum" class="info-value td-mono"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Kalan İzin Hakkı</span>
+                            <span class="info-value"><span id="detay-izin"
+                                    style="color: var(--warning); font-weight: 600;"></span> gün</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Mevcut Oda</span>
+                            <span class="badge badge-active" style="width: fit-content;">📍 <span
+                                    id="detay-oda"></span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-box">
+                <p class="text-muted-sm">
+                    Öğrencinin kalmakta olduğu odayı müsait olan başka bir odayla değiştirebilirsiniz. Kapasitesi dolu
+                    olan odalar listede gösterilmez.
+                </p>
+                <select id="room-select" class="select-custom"></select>
+                <button class="btn btn-approve btn-block"
+                    onclick="updateRoom()">
+                    Odayı Güncelle
+                </button>
+                <div style="border-top: 1px dashed var(--border); margin-top: 20px; padding-top: 20px;">
+                    <p class="text-muted-sm">
+                        Öğrencinin yurtla ilişiğini keser, odadaki doluluk oranını düşürür ve bekleyen tüm izin
+                        taleplerini iptal eder.
+                    </p>
+                    <button class="btn btn-reject btn-block"
+                        onclick="expelStudent()">
+                        Öğrenciyi Yurttan At
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="utils.js"></script>
+    <script src="student_detail.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KYK Yönetim | Ödemeler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-icon">🏫</div>
+            <div>
+                <span>KYK YÖNETİM</span>
+                <small>Yurt Yönetim Paneli</small>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">📋</span> Başvurular
+            </a>
+            <a href="students.html" class="nav-item">
+                <span class="nav-icon">👥</span> Öğrenciler
+            </a>
+            <a href="leaves.html" class="nav-item">
+                <span class="nav-icon">🗓</span> İzin Talepleri
+            </a>
+            <a href="payments.html" class="nav-item active">
+                <span class="nav-icon">💳</span> Ödemeler
+            </a>
+            <a href="rooms.html" class="nav-item">
+                <span class="nav-icon">🚪</span> Oda Durumları
+            </a>
+        </nav>
+    </div>
+
+    <div id="main">
+        <div class="page-header">
+            <div>
+                <div class="page-title">Ödemeler</div>
+            </div>
+            <div class="live-badge">
+                <span class="live-dot"></span>
+                <span id="date">—</span>
+            </div>
+        </div>
+
+        <div id="bildirim-banner" class="info-banner" style="display:none;">
+            Bu ay ödeme yapmayan öğrencilere otomatik hatırlatma bildirimi gönderildi.
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Bu Ay Ödeme Durumu</span>
+                <div class="filter-group">
+                    <select id="odeme-filtre" onchange="renderTable()" class="filter-select">
+                        <option value="">Tümü</option>
+                        <option value="paid">Ödeyenler</option>
+                        <option value="unpaid">Ödemeyenler</option>
+                    </select>
+                    <span class="count-pill" id="count">—</span>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>TC Kimlik No</th>
+                        <th>Ad Soyad</th>
+                        <th>Oda</th>
+                        <th>Durum</th>
+                        <th>Ödeme Tarihi</th>
+                        <th>Tutar</th>
+                    </tr>
+                </thead>
+                <tbody id="tablo"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="utils.js"></script>
+    <script src="payments.js"></script>
+</body>
+
+</html>

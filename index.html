@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KYK Yönetim | Başvurular</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-icon">🏫</div>
+            <div>
+                <span>KYK YÖNETİM</span>
+                <small>Yurt Yönetim Paneli</small>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html" class="nav-item active">
+                <span class="nav-icon">📋</span> Başvurular
+            </a>
+            <a href="students.html" class="nav-item">
+                <span class="nav-icon">👥</span> Öğrenciler
+            </a>
+            <a href="leaves.html" class="nav-item">
+                <span class="nav-icon">🗓</span> İzin Talepleri
+            </a>
+            <a href="payments.html" class="nav-item">
+                <span class="nav-icon">💳</span> Ödemeler
+            </a>
+            <a href="rooms.html" class="nav-item">
+                <span class="nav-icon">🚪</span> Oda Durumları
+            </a>
+        </nav>
+    </div>
+
+    <div id="main">
+        <div class="page-header">
+            <div>
+                <div class="page-title">Yurt Başvuruları</div>
+            </div>
+            <div class="live-badge">
+                <span class="live-dot"></span>
+                <span id="date">—</span>-
+                <span id="count">0 başvuru</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Bekleyen Başvurular</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>TC Kimlik No</th>
+                        <th>Ad Soyad</th>
+                        <th>Başvuru Tarihi</th>
+                        <th>Durum</th>
+                        <th style="text-align:center;">İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody id="tablo"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="utils.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
